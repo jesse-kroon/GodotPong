@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2l7kg7vr3g47"]
+
+[ext_resource type="Texture2D" uid="uid://db8daul58tefs" path="res://assets/art/computer_paddle.png" id="1_rv8ti"]
+[ext_resource type="Script" path="res://scenes/computer_paddle.gd" id="1_xhm0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwnj"]
+size = Vector2(6, 16)
+
+[node name="ComputerPaddle" type="StaticBody2D"]
+scale = Vector2(3, 5)
+script = ExtResource("1_xhm0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rv8ti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.14441e-06)
+shape = SubResource("RectangleShape2D_qtwnj")
