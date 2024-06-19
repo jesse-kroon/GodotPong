@@ -2,6 +2,7 @@ extends StaticBody2D
 
 
 var screen_size
+var MOVEMENT_SPEED = 500
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -15,6 +16,6 @@ func _process(delta):
 		velocity.y += 1
 	
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * 400
+		velocity = velocity.normalized() * 500
 	
 	move_and_collide(velocity * delta)
