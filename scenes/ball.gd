@@ -23,7 +23,7 @@ func _process(delta):
 			var particle_effect = particle_effect_scene.instantiate() as CPUParticles2D 
 			particle_effect.global_position = collision_position
 			get_parent().add_child(particle_effect)
-			particle_effect.emitting = true
+			
 
 	if global_position.x > screen_size.x || global_position.x < 0:
 		# Need to do score assignment here

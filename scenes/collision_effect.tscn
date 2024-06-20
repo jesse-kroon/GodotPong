@@ -1,4 +1,55 @@
-[gd_scene format=3 uid="uid://d3561piatp1d"]
+[gd_scene load_steps=4 format=3 uid="uid://d3561piatp1d"]
+
+[sub_resource type="Animation" id="Animation_u0eum"]
+resource_name = "default"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5pb3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4q0ln"]
+_data = {
+"RESET": SubResource("Animation_5pb3a"),
+"default": SubResource("Animation_u0eum")
+}
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -16,3 +67,9 @@ initial_velocity_max = 10.0
 scale_amount_min = 2.8
 scale_amount_max = 2.8
 color = Color(1, 0.286275, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4q0ln")
+}
+autoplay = "default"
