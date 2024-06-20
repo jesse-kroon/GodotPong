@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://h6c0wlcnlwxg"]
+[gd_scene load_steps=6 format=3 uid="uid://h6c0wlcnlwxg"]
 
 [ext_resource type="Texture2D" uid="uid://dvnahe4amh6tw" path="res://assets/art/ball.png" id="1_vnugp"]
 [ext_resource type="Script" path="res://scenes/ball.gd" id="1_wgksa"]
+[ext_resource type="PackedScene" uid="uid://d3561piatp1d" path="res://scenes/collision_effect.tscn" id="2_7vsl2"]
 [ext_resource type="AudioStream" uid="uid://bvl5e5y3s7oa8" path="res://assets/music/bounce_sound.mp3" id="3_221ie"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jtxt"]
@@ -9,6 +10,7 @@ radius = 8.24621
 
 [node name="Ball" type="CharacterBody2D" groups=["ball"]]
 script = ExtResource("1_wgksa")
+particle_effect_scene = ExtResource("2_7vsl2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
